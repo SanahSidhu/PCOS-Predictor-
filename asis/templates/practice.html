@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+ <div class="login">
+	<h1>PCOS Predictor</h1>
+        <h3>0 means 'NO' and 1 means 'YES'</h3>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Age (yrs)" placeholder="Age (yrs)" required="required" />
+        <input type="text" name="BMI" placeholder="BMI" required="required" />
+		<input type="text" name="Cycle (R/I)" placeholder="Cycle (R/I)" required="required" />
+                  <input type="text" name="Weight Gain (Y/N)" placeholder="Weight Gain (Y/N)" required="required" />
+              <input type="text" name="Hair Growth (Y/N)" placeholder="Hair Growth (Y/N)" required="required" />
+           <input type="text" name="Skin Darkening (Y/N)" placeholder="Skin Darkening (Y/N)" required="required" />
+         <input type="text" name="Hair Loss (Y/N)" placeholder="Hair Loss (Y/N)" required="required" />
+          <input type="text" name="Pimples (Y/N)" placeholder="Pimples (Y/N)" required="required" />
+      <input type="text" name="Fast food (Y/N)" placeholder="Fast food (Y/N)" required="required" />
+   <input type="text" name="Regular Exercise (Y/N)" placeholder="Regular Exercise (Y/N)" required="required" />
+
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+
+   
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Sign Language Alphabet Recognition</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  body {
+    font: 20px Montserrat, sans-serif;
+    line-height: 1.8;
+    color: #f5f6f7;
+  }
+  p {font-size: 16px;}
+  .margin {margin-bottom: 25px;}
+  .bg-1 { 
+    background-color: #acbc1a; /* Green */
+    color: #ffffff;
+  }
+  .bg-2 { 
+    background-color: #474e5d; /* Dark Blue */
+    color: #ffffff;
+  }
+  .bg-3 { 
+    background-color: #ffffff; /* White */
+    color: #555555;
+  }
+  .bg-4 { 
+    background-color: #2f2f2f; /* Black Gray */
+    color: #fff;
+  }
+  .container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+  .navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+  }
+  .navbar-nav  li a:hover {
+    color: #bc1abc !important;
+  }
+  #container-v {
+    overflow-y: hidden;
+    width:100% !important;
+  }
+  .child_con {
+    height: 500px;
+    float: left;
+    margin: 1em;
+  }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Home</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#about">ABOUT ME</a></li>
+        <li><a href="#details">FIND ME</a></li>
+        <li><a href="/practice">Prediction</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- First Container -->
+<div id="about" class="container-fluid bg-1 text-center">
+  <h3 class="margin">PCOS PREDICTOR</h3>
+  <img src="{{url_for('static', filename='images.png')}}" class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="350" height="350">
+  <h3>PCOS is not a disease, it’s a lifelong condition whose repercussions can be mitigated through certain healthy changes in lifestyle, early detection and seeking help from a professional. Aim of this project is generating awareness about PCOS. </h3>
+</br>
+</div>
+
+
+<!-- Third Container (Grid) -->
+<div id="details" class="container-fluid bg-3 text-center">    
+  <h3 class="margin">Where To Find US?</h3><br>
+  <div class="row">
+    <div class="col-sm-4" style="padding:0% 5% 0% 4%">
+      <p> Asis Kaur Baweja ,Amartya Roy,Sanah Sidhu ,Deep Learning ,nodejs enthusiast pursuing btect in computer science @SRMIST</p>
+      <a href="mailto:adityadamen@gmail.com">Email Me</a>
+      <img src="{{url_for('static', filename='usc.png')}}" class="img-responsive margin" style="width:100%; height:200px;padding:20px;" alt="Image">
+    </div>
+    <div class="col-sm-4" style="padding:0% 4% 0% 4%"> 
+      <p>This project and installation procedure is available for public on github. Please use the below url to download.</p>
+      <a href="https://github.com/asiskaur/PCOS-Predictor-.git">Clone Me</a>
+      <img src="{{url_for('static', filename='git-hub.png')}}" class="img-responsive margin" style="width:100%;height:200px;" alt="Image">
+    </div>
+    <div class="col-sm-4" style="padding:0% 4% 0% 5%"> 
+      <p>Currently, I am working on launching this project online on Heroku. Kindly come back after few days for the link.</p>
+      <a href="#">Coming Soon</a>
+      <img src="{{url_for('static', filename='heroku.png')}}" class="img-responsive margin" style="width:100%;height:200px;padding:20px;" alt="Image">
+    </div>
+  </div>
+</div>
+
+
+
+</body>
+
+</html>
