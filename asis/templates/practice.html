@@ -11,22 +11,38 @@
 </head>
 
 <body>
- <div class="login">
+
+<!--##########################################################################################################-->
+
+                                          <!--CHANGES MADE HERE... ADDED SCROLL BAR-->
+ <div class="login" style = "height: 550px;overflow-y: scroll;" >           
+
+<!--##########################################################################################################-->
+
+
 	<h1>PCOS Predictor</h1>
-        <h3>0 means 'NO' and 1 means 'YES'</h3>
+        
 
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
-    	<input type="text" name="Age (yrs)" placeholder="Age (yrs)" required="required" />
-        <input type="text" name="BMI" placeholder="BMI" required="required" />
-		<input type="text" name="Cycle (R/I)" placeholder="Cycle (R/I)" required="required" />
-                  <input type="text" name="Weight Gain (Y/N)" placeholder="Weight Gain (Y/N)" required="required" />
-              <input type="text" name="Hair Growth (Y/N)" placeholder="Hair Growth (Y/N)" required="required" />
-           <input type="text" name="Skin Darkening (Y/N)" placeholder="Skin Darkening (Y/N)" required="required" />
-         <input type="text" name="Hair Loss (Y/N)" placeholder="Hair Loss (Y/N)" required="required" />
-          <input type="text" name="Pimples (Y/N)" placeholder="Pimples (Y/N)" required="required" />
-      <input type="text" name="Fast food (Y/N)" placeholder="Fast food (Y/N)" required="required" />
-   <input type="text" name="Regular Exercise (Y/N)" placeholder="Regular Exercise (Y/N)" required="required" />
+   
+  <!--##########################################################################################################-->
+                                  
+                                              <!--REGEX FOR ERROR HANDLING-->
+  <input type="text" name="Age (yrs)" placeholder="Age (yrs)" pattern="[0-1]{1}[0-9]{0,2}" title="Please enter a valid number between 10 and 200." required="required" />
+  <input type="text" name="BMI" placeholder="BMI"  pattern="^(?!0+(?:\.0+)?$)\d?\d(?:\.\d\d?)?$" title="Please enter any number between 0 and 100" required="required" />
+	
+  
+  <!--##########################################################################################################-->
+		
+		<input type="text" name="Cycle (R/I)" placeholder="Cycle (regular/irregular)" required="required" />
+                  <input type="text" name="Weight Gain (Y/N)" placeholder="Weight Gain (yes/no)" required="required" />
+              <input type="text" name="Hair Growth (Y/N)" placeholder="Hair Growth (yes/no)" required="required" />
+           <input type="text" name="Skin Darkening (Y/N)" placeholder="Skin Darkening (yes/no)" required="required" />
+         <input type="text" name="Hair Loss (Y/N)" placeholder="Hair Loss (yes/no)" required="required" />
+          <input type="text" name="Pimples (Y/N)" placeholder="Pimples (yes/no)" required="required" />
+      <input type="text" name="Fast food (Y/N)" placeholder="Fast food (yes/no)" required="required" />
+   <input type="text" name="Regular Exercise (Y/N)" placeholder="Regular Exercise (yes/no)" required="required" />
 
 
 
@@ -34,9 +50,9 @@
     </form>
 
 
-   
+   <p>                   </p>
    {{ prediction_text }}
-
+ 
  </div>
 
 
